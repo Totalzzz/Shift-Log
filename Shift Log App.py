@@ -1,0 +1,30 @@
+#Shift Log / Punch Clock Python Application v1.0
+#Application created by Totalzzz
+
+#Imports Time and System Modules
+import datetime
+
+#Our startup function that will ask for users name and current project
+def startup():
+    print("Welcome to Shift Log Application, please enter the following information to get started.")
+    name = input("Name: ")
+    task = input("Current Project/Task Being Worked On: ")
+    start = input("Clock in? ")
+#Ask user if they are ready to clock in, if true it would call the startup function.
+start = input("Enter shift log manager? ")
+if start == "yes" or start == "Yes" or start == "YES":
+    startup()
+    clock_in = datetime.datetime.now()
+    print("Clocked in at: ", clock_in)
+
+#Ends shift when the user is ready, logging the clock out time.
+end = input("Clock out? ")
+if end == "yes" or end == "Yes" or end == "YES":
+    clock_out = datetime.datetime.now()
+    print("Clocked out at: ", clock_out)
+    total_time = clock_out - clock_in
+    print("Total time worked: ", total_time)
+
+exit = input("Thank you for using Shift Log Application, have a great day!")
+if exit == "yes" or exit == "Yes" or exit == "YES":
+    print("Exiting Shift Log Application...")
